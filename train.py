@@ -17,10 +17,10 @@
 # limitations under the License.
 # ------------------------------------------------------------------------
 import os
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 from poems.model import rnn_model
 from poems.poems import process_poems, generate_batch
-
+tf.disable_eager_execution()
 tf.app.flags.DEFINE_integer('batch_size', 64, 'batch size.')
 tf.app.flags.DEFINE_float('learning_rate', 0.01, 'learning rate.')
 tf.app.flags.DEFINE_string('model_dir', os.path.abspath('./model'), 'model save path.')

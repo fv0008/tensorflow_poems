@@ -16,11 +16,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ------------------------------------------------------------------------
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 from poems.model import rnn_model
 from poems.poems import process_poems
 import numpy as np
-
+tf.disable_eager_execution()
 start_token = 'B'
 end_token = 'E'
 model_dir = './model/'
